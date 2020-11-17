@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./assets/variables";
+
+h1 { 
+    font-family: 'Merriweather',
+    serif;
+}
+
+* {
+    font-family: 'Lora',
+    serif;
+}
+
+body {
+    background-color: variables.$base;
+}

@@ -1,0 +1,5 @@
+<body>
+    <input (change)="handleChange($event)" type="text" placeholder="Search for a book here...">
+    <button class="btn-search" (click)="handleClick()">Search</button>
+    <app-book-list [books]="books"></app-book-list>
+</body>

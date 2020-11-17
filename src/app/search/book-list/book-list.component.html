@@ -1,0 +1,8 @@
+<section>
+    <article *ngFor="let book of books">
+        <h3>{{book.volumeInfo.title}}</h3>
+        <p>{{book.volumeInfo.authors}}</p>
+        <img src={{book.volumeInfo.imageLinks.smallThumbnail}} alt="">
+        <p>{{handleDescription(book.volumeInfo.description)}}</p>
+    </article>
+</section>
