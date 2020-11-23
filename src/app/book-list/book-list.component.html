@@ -1,0 +1,7 @@
+<section>
+    <app-bookitem 
+        *ngFor="let book of books" 
+        [book]="book" 
+        [title]="book.volumeInfo.title">
+    </app-bookitem>
+</section>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SearchService } from "../header/search/search.service"
 
 @Component({
   selector: 'app-book-list',
@@ -7,22 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
 
-  @Input() books: any[];
+  @Input() books: any;
+  searchedBooks: any;
 
   constructor() { }
 
-  handleDescription(description) {
-    if (description && description.length > 297) {
-      return `${description.slice(0, 296)}...`;
-    }
-    else {
-      return description;
-    }
-  }
-
   ngOnInit(): void {
-    console.log(this.books);
-    
   }
 
 }

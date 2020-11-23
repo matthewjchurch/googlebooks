@@ -1,13 +1,15 @@
 @use "./assets/variables";
 
 h1 { 
-    font-family: 'Merriweather',
+    font-family: 'Alegreya SC',
     serif;
+    font-size: 48px;
+    color: variables.$blue;
 }
 
 * {
-    font-family: 'Lora',
-    serif;
+    font-family: 'Lato',
+    sans-serif;
 }
 
 body {

@@ -1,0 +1,12 @@
+<article>
+    <img *ngIf="book.volumeInfo.imageLinks.smallThumbnail" src={{book.volumeInfo.imageLinks.smallThumbnail}} alt="">
+    <div class="book__book-info">
+        <h3>{{ (title.length > 30)? (title | slice : 0 : 27) + '...' : (title) }}</h3>
+        <p>{{book.volumeInfo.authors}}</p>
+        <fa-icon 
+            [icon]="faHeart" 
+            [ngClass]="{'fav' : toggle, '' : !toggle}" 
+            (click)="handleAddToFav(book.id)">
+        </fa-icon>
+    </div>
+</article>

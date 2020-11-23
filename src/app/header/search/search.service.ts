@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 export interface GoogleBooksResponse {
     items: any[],
@@ -16,8 +17,18 @@ export interface GoogleBooksResponse {
 
     queryStr: string;
 
-    getBooks() {
-        return this.http.get(this.queryStr)
+    private childClickedEvent = new BehaviorSubject<string>("");
+
+    emitChildEvent(msg: string){
+        this.childClickedEvent.next(msg)
+    }
+
+    childEventListner(){
+        return this.childClickedEvent.asObservable();
+    }
+
+    getBooks(bookSearch) {
+        return this.http.get(bookSearch)
             .toPromise()
             .then((res: GoogleBooksResponse) => res)
     }
